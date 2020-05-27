@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 MAINTAINER Anuj Gupta "anuj6.gupta@aricent.com"
-RUN sudo apt-get update && sudo apt-get -y install python-pip python-dev build-essential
+RUN apt-get update && sudo apt-get -y install python-pip python-dev build-essential
 COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
