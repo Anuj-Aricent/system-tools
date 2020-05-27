@@ -17,6 +17,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{ secrets.OC_DOCKER_REGISTORY }}/poc-project/my-app:latest
     - name: Authenticate Docker
-      run: docker login -u IAM#anujgu22@in.ibm.com -p R8U8XeHBMWAQFOtYOffYVrOr_95LkkuzTYnvB5E0Mzc docker-registry-default.nawrlplcluster1poc-82fc608792200e0c1f5d960e17be9976-0001.us-south.containers.appdomain.cloud
+      run: docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.API_TOKEN }} ${{ secrets.OC_DOCKER_REGISTORY }}
     - name: Pushing Docker Image
       run: docker push ${{ secrets.OC_DOCKER_REGISTORY }}/poc-project/my-app:latest
