@@ -1,8 +1,9 @@
-FROM ubuntu:latest
+FROM ubuntu:14.04
 MAINTAINER Anuj Gupta "anuj6.gupta@aricent.com"
-RUN apt-get install software-properties-common
-RUN apt-add-repository universe
-RUN apt-get update && apt-get -y install python-pip python-dev build-essential
+RUN apt-get update && apt-get install -y \
+    python-pip \
+    python-dev \
+    build-essential
 COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
